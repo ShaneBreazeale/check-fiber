@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Fiber Checker",
+  "version": "1.0",
+  "description": "Shows fiber availability on Zillow listings using FCC BDC data",
+  "permissions": [],
+  "host_permissions": [
+    "https://geocoding.geo.census.gov/*",
+    "https://services.arcgis.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.zillow.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icon-48.png",
+    "96": "icon-96.png"
+  }
+}
